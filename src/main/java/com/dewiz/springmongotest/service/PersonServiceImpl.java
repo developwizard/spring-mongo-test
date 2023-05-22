@@ -5,6 +5,8 @@ import com.dewiz.springmongotest.repository.PersonRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PersonServiceImpl implements PersonService {
@@ -12,5 +14,10 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public String save(Person person) {
         return personRepository.save(person).getPersonId();
+    }
+
+    @Override
+    public List<Person> getPersonStartWith(String name) {
+        return personRepository.findByFirstNameAndStatsWith(name);
     }
 }
