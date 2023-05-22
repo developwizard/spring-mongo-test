@@ -18,7 +18,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public List<Person> getPersonStartWith(String name) {
-        return personRepository.findByFirstNameAndStatsWith(name);
+        return personRepository.findByFirstNameAndStartsWith(name);
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PersonRepository extends MongoRepository<Person, String> {
-    List<Person> findByFirstNameAndStatsWith(String name);
+    List<Person> findByFirstNameAndStartsWith(String name);
 
     @Query(value = "{'age': {$gt: ?0, $lt:  ?1}}")
     List<Person> findPersonByAgeBetween(Integer min, Integer max);
