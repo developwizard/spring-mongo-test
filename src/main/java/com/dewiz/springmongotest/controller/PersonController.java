@@ -51,8 +51,13 @@ public class PersonController {
         return personService.search(name, minAge, maxAge, city, pageable);
     }
 
-    @GetMapping("oldestPerson")
+    @GetMapping("oldest-person")
     List<Document> getOldestPerson() {
         return personService.getOldestPersonByCity();
+    }
+
+    @GetMapping("population-by-city")
+    public List<Document> getPopulationByCity() {
+        return personService.getPopulationByCity();
     }
 }
